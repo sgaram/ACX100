@@ -590,14 +590,12 @@ def bot(op):
                     try:
                         random.choice(KAC).cancelGroupInvitation(op.param1,[op.param3])
                         random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
-                else:
-                    pass
 
         if op.type == 17:
             if op.param2 in wait["blacklist"]:
-                random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
-            else:
-                pass
+                if op.param2 not in Bots and op.param2 not in owner and op.param2 not in admin and op.param2 not in staff:
+                    try:
+                        random.choice(ABC).kickoutFromGroup(op.param1,[op.param2])
 
         if op.type == 17:
             if op.param1 in welcome:
